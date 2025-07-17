@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+option csharp_namespace ="Teste.Shared";
+package StockTrading;
+
+service StockTradings{
+	rpc SubscribeStockprices (StockRequest) returns (stream StockResponse);
+	rpc Placeorder(OrderRequest) returns(OrdeResponse);
+}
+
+message StockRequest{
+	string symbol = 1;
+}
+
+message StockResponse{
+	string symbol = 1;
+	double price = 2;
+}
+
+message OrderRequest{
+	string symbol = 1;
+	int32 quantity = 2;
+	string orderType = 3;
+}
+
+message OrdeResponse{
+	string message = 1;
+}
