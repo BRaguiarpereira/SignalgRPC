@@ -4,7 +4,7 @@ package StockTrading;
 
 service StockTradings{
 	rpc SubscribeStockprices (StockRequest) returns (stream StockResponse);
-	rpc Placeorder(OrderRequest) returns(OrdeResponse);
+	rpc PlaceOrder(OrderRequest) returns(OrdeResponse);
 }
 
 message StockRequest{

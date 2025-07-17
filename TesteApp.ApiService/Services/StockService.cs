@@ -25,11 +25,11 @@ namespace TesteApp.ApiService.Services
         }
 
 
-        public override Task<OrdeResponse> Placeorder(OrderRequest request, ServerCallContext context)
+        public override Task<OrdeResponse> PlaceOrder(OrderRequest request, ServerCallContext context)
         {
             return Task.FromResult(new OrdeResponse
             {
-                Message = $"Placed {request.OrderType} order for {request.Symbol} stocks"
+                Message = $"Placed {request.OrderType} order for {request.Quantity} {request.Symbol} stocks"
             });
         }
         
